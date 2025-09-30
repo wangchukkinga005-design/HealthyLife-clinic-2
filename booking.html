@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Book an Appointment – HealthyLife Community Clinic</title>
+  <style>
+    body{margin:0;font:16px/1.5 system-ui,sans-serif;background:#f8fafc;color:#111}
+    header{background:#fff;border-bottom:1px solid #ddd;padding:1rem;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:700;font-size:1.1rem}
+    nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+    nav a{text-decoration:none;color:#111;font-weight:600;padding:.25rem .4rem;border-radius:.35rem}
+    nav a:hover,nav a:focus{color:#0ea5e9;outline:none}
+    nav a.active{background:#e0f2fe;color:#075985}
+    main{max-width:960px;margin:2rem auto;padding:1rem}
+    .panel{background:#fff;border:1px solid #e5e7eb;border-radius:.6rem;padding:1rem}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    @media (max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:520px){.grid{grid-template-columns:1fr}}
+    label{font-weight:700}
+    input,select,button{font:inherit;padding:.6rem;border:1px solid #cbd5e1;border-radius:.45rem}
+    input:focus,select:focus,button:focus{outline:3px solid #f59e0b;outline-offset:2px}
+    .results{margin-top:1rem;display:grid;gap:.75rem}
+    article{background:#fff;border:1px solid #e5e7eb;border-radius:.6rem;padding:1rem}
+    .btn{background:#10b981;color:#fff;font-weight:800;border:none;border-radius:.5rem;cursor:pointer;padding:.65rem 1rem}
+    .note{background:#ecfeff;border:1px solid #a5f3fc;padding:.75rem;border-radius:.5rem;margin:.75rem 0}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">HealthyLife Community Clinic</div>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a class="active" aria-current="page" href="booking.html">Book</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <h1>Find a Doctor & Book</h1>
+    <p class="note" role="note">Booking <strong>4 or more telehealth sessions</strong> automatically applies a <strong>10% discount</strong> at checkout.</p>
+
+    <form class="panel" role="search" aria-label="Doctor search filters">
+      <div class="grid" role="group" aria-label="Filters">
+        <div>
+          <label for="when">Date</label>
+          <input id="when" type="date">
+        </div>
+        <div>
+          <label for="specialty">Specialty</label>
+          <select id="specialty">
+            <option value="">Any</option>
+            <option>General Practitioner</option>
+            <option>Paediatrics</option>
+            <option>Immunisation Nurse</option>
+          </select>
+        </div>
+        <div>
+          <label for="service">Service</label>
+          <select id="service">
+            <option value="">Any</option>
+            <option>Consultation</option>
+            <option>Vaccination</option>
+            <option>Telehealth</option>
+          </select>
+        </div>
+        <div>
+          <label for="q">Search</label>
+          <input id="q" type="search" placeholder="Name, clinic, keyword">
+        </div>
+      </div>
+      <div style="margin-top:1rem">
+        <button class="btn" type="submit">Search</button>
+      </div>
+    </form>
+
+    <section aria-live="polite" class="results" aria-label="Search results (examples)">
+      <article>
+        <h2 style="margin:0 0 .25rem 0;">Dr Jane Patel — GP</h2>
+        <p class="hint">Services: Consultation, Telehealth • Next available: Tomorrow 9:30am</p>
+        <button class="btn" type="button">Book Telehealth</button>
+      </article>
+      <article>
+        <h2 style="margin:0 0 .25rem 0;">Nurse Alex Chen — Immunisation</h2>
+        <p class="hint">Services: Vaccination • Next available: Thu 11:15am</p>
+        <button class="btn" type="button">Book Vaccination</button>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
